@@ -78,3 +78,54 @@ np.random.randint(7,size=(3,3))
 # The identity Matrix
 np.identity(5) 
 
+p = np.ones((5,5),dtype='int32')
+q = np.zeros((3,3),dtype='int32')
+q[1,1]=9
+p[1:4,1:4]=q
+print(p)
+
+## Be careful while copying the array
+## User  .copy()
+
+# LINEAR ALGERA
+
+a = np.ones((2,3))
+b = np.full((3,2),2)
+print(np.matmul(a,b))
+
+# Find the determinant
+d = np.identity(3)
+res = np.linalg.det(d)
+print(res)
+
+# Statistics
+stats = np.array([[1,2,3],[4,5,6]])
+
+print(np.min(stats))
+print(np.max(stats,axis=1))
+
+# RE-ORGANIZING ARRAYS
+
+print(stats.reshape(6,1))
+# Vertically Stacking
+
+v1 = np.array([1,2,3,4])
+v2 = np.array([5,6,7,8])
+
+new = np.vstack([v1,v2,v2])
+print(new)
+new = np.hstack((v1,v2))
+print(new)
+
+data = np.genfromtxt('data.txt',delimiter=',')
+print(data.astype('int32'))
+
+# Boolean Masking and Advanced Indexing
+boolData = data>50
+data[data<30]
+print()
+
+
+
+
+
